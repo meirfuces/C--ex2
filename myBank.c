@@ -91,7 +91,7 @@ void print (){
     int i=0;
     while (i<size){
         if (account[i][1]==1){
-            printf ("in your account Number: %d, the Balance is %lf: \n", i+901,account[i][0]);
+            printf ("in your account Number: %d, the Balance is %0.2lf: \n", i+901,account[i][0]);
         } // end if
         i++;
     } // end while
