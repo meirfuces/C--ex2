@@ -4,6 +4,13 @@ char ch;
 #define size 50
 
 double account [size][2]={0}; // 2 cells [1] for if is empty or not, and the other [0] for cash
+
+void BufferClean()
+{
+	 char clear;
+	 while ((clear = getchar()) != '\n' && clear != EOF);//  Buffer cleanner- need to put it into function
+}
+
 void open_account (double cash)
 { // char O
     printf("open numAccount\n");
@@ -82,7 +89,7 @@ void interest (double ribit){
     while (i<size)
     {
         if (account[i][1]==1){
-            account[i][0]= (account[i][0])*((100+ribit)/100);
+            account[i][0]= (account[i][0]*((ribit)/100) + account[i][0]);
         }
         i++;
     } //end while
@@ -99,17 +106,7 @@ void print (){
 
 
 
-/* int FuncNumAccount ()
-    {
-        int numAccount;
-        printf("Enter your number account:  \n");
-        scanf("%d" ,&numAccount);
-        if (numAccount<951 && numAccount>900)
-        	return numAccount;
-        else
-        	return 0;
 
-    }*/
 
 
 }
