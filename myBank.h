@@ -1,3 +1,4 @@
+void close();
 void BufferClean() ;
 void open_account (double cash);
 void balance (int numAccount);
@@ -6,4 +7,5 @@ void withdraw (int numAccount,double cashWithdraw);
 void closeAccount (int numAccount);
 void interest (double ribit);
 void print ();
+
 

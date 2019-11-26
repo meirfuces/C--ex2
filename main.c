@@ -38,7 +38,7 @@ switch (ch[0])
     double ribit;
 
 case 'O':
-    printf("\nEnter your cash:  \n");
+    printf("\nInitial deposit:  \n");
     flag=scanf("%lf", &cash);
 
 
@@ -53,7 +53,7 @@ case 'O':
 
 	case 'B':
 
-    printf("Enter your number account:  \n");
+    printf("Account number?:   \n");
     scanf("%d", &numAccount);
 
 
@@ -67,7 +67,7 @@ case 'O':
 
     //**********************************************
     case 'D':
-    printf("Enter your number account:  \n");
+    printf("Account number?:   \n");
     scanf("%d" ,&numAccount);
 
 
@@ -86,14 +86,18 @@ case 'O':
 
 
     BufferClean();
+    if (cash>-1)
     Deposit(numAccount, cash);
+    else
+    	printf("the value must be positive \n");
+
     }
     break;
 //************************************************************
 
     case 'W': // meshich
 
-     printf("Enter your number account:  \n");
+     printf("Account number?:  \n");
      scanf("%d" ,&numAccount);
 
 
@@ -111,15 +115,18 @@ case 'O':
 
 
     BufferClean();
-
+    if (cash>0)
     withdraw(numAccount, cash);
+    else
+    	printf("the value must be positive \n");
+
     }
     // functionW
     break;
 //*********************************************
 
     case 'C': //close
-    printf("Enter your number account for close:  \n");
+    printf("Account number?:  \n");
     scanf("%d", &numAccount);
 
 
@@ -129,7 +136,7 @@ case 'O':
     break;
 //*******************************************
     case 'I': // interest ribit
-    printf("Enter a intrest:  \n");
+    printf("Interest rate?  \n");
     scanf("%lf", &ribit);
 
     BufferClean();
@@ -140,9 +147,12 @@ case 'O':
     case 'P'://print all
     print();
     break;
-
+//*************************************
     case 'E':
+    	close();
+    	 printf("Bye Bye!!\n");
     break;
+//****************************************
     default:
                 printf(" Error! this key is not correct\n");
     // end the my bank and close the accounts
