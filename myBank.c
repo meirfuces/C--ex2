@@ -4,7 +4,7 @@ char ch;
 #define size 50
 
 double account [size][2]={0}; // 2 cells [1] for if is empty or not, and the other [0] for cash
-
+//**************************************
 void close()
 {
 	int i;
@@ -13,14 +13,16 @@ void close()
 	account[i][1]=0;
 	account[i][0]=0;
 	}
-}
 
+}
+//************************************************
 void BufferClean()
 {
 	 char clear;
 	 while ((clear = getchar()) != '\n' && clear != EOF);//  Buffer cleanner- need to put it into function
 }
 
+//*****************************************
 void open_account (double cash)
 { // char O
 
@@ -40,6 +42,8 @@ void open_account (double cash)
     else
     	printf("The account space is full\n");
 }
+
+//****************************************
 void balance (int numAccount)
 {
     int num=numAccount-901;
@@ -52,34 +56,24 @@ void balance (int numAccount)
     printf ("this account is Close\n");
 
 
-   // else  // if num is not in the range
-   // {
-    //printf ("your number will need to be between 901-950\n");
-    //} // end else
 } // end balcnce
 
+//****************************************************
 void Deposit (int numAccount, double cash)
 {
     int num=numAccount-901;
-  //  if (num<=0 || num>=0)
-  //  {
-
-
     if (account[num][1]==1 && !(account[num][0]+cash <0))
-    { // the accunt bank is open
+    { // the accunt bank is open AND dont get minus
      account[num][0]+=cash;   
      printf ("your balance now is: %.2lf \n", account[num][0]);
     } // end if the account bank is open
 
     else // the account bank is close or empty
     printf ("This account is Close, Or the account is open BUT you Not alowwd to do this opreation\n");
-    }
-  //  else
-//{
-  //  printf ("your number will need to be between 901-950\n");
-//} // end else
 
+}
 
+//*******************************************************
 
 
 void withdraw (int numAccount,double cashWithdraw)
@@ -88,24 +82,22 @@ void withdraw (int numAccount,double cashWithdraw)
     Deposit(numAccount,cashWithdraw);
 }
 
-
+//***********************************************************
 void closeAccount (int numAccount)
 {
     numAccount=numAccount-901;
-    // if (numAccount<=0 || numAccount>0){
-         if (account[numAccount][1]==1)
-         { //check if is open
-                account[numAccount][1]=0;
-                 account[numAccount][0]=0;
-                 printf (" Account Number:%d is closed now!\n",numAccount+901);
-         } // end if open
-         else
-         {
-             printf ("this Account isn't open\n");
-         } // end else
+    if (account[numAccount][1]==1)
+    	{ //check if is open
+        	account[numAccount][1]=0;
+            account[numAccount][0]=0;
+            printf (" Account Number:%d is closed now!\n",numAccount+901);
+        } // end if open
+    else
+    	printf ("this Account isn't open\n");
 
-//} //
 } //end function
+
+//******************************************************************
 void interest (double ribit)
 {
     int i=0;
@@ -120,6 +112,7 @@ void interest (double ribit)
     printf ("%0.2lf%% interest was added to all the accounts\n",ribit);
 } // end function
 
+//************************************************************************
 void print ()
 {
     int i=0;

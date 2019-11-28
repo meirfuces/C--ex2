@@ -4,11 +4,12 @@
 
 
 
+
 int main()
 {
 
 
-char ch []="po";
+char ch []="hipopotamus ginton durlacher and meir foxi";
 double ribit;
 int numAccount;
 double cash;
@@ -22,7 +23,10 @@ while (ch[0]!='E')
 {
 ch[0]='p',ch[1]='o';
 
-while(strlen(ch)!=1)
+
+
+
+while(strlen(ch)!=1) //loading only one char
 {
 numAccount=0;
 cash=0;
@@ -31,14 +35,12 @@ printf("Transaction type?: \n");
 scanf(" %s", ch);
 
 if(strlen(ch)!=1)
-{
 	printf(" Error! this key is not correct\n");
 
-}
-
 BufferClean();
-
 }
+
+
 
 
 switch (ch[0])
@@ -143,10 +145,11 @@ case 'O':
 
     case 'C': //close
     printf("Account number?:  \n");
-    scanf("%d", &numAccount);
+    scanf(" %d", &numAccount);
     if (!(numAccount<951 && numAccount>900))
         {
            printf("Error:you enter wrong value for AccountNumber!!\n");
+           BufferClean();
            break;
         }
 
@@ -170,7 +173,7 @@ case 'O':
     break;
 //*************************************
     case 'E':
-    	close();
+         close();
     	 printf("Bye Bye!!\n");
     break;
 //****************************************
