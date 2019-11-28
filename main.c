@@ -2,16 +2,21 @@
 #include <string.h>
 #include "myBank.h"
 
-//char ch='p';
-int flag=0;
-char ch []="po";
+
+
 int main()
 {
+
+
+char ch []="po";
+double ribit;
 int numAccount;
 double cash;
+int flag=0;
 
 
 printf("OPREATIONS DICTIONARY \n 'O' =Open  \n 'B' =Balance  \n 'D' =Deposit  \n 'W' =Withdraw  \n 'C' =Close  \n 'I' =Interest  \n 'P' =Print  \n 'E' =Exit  \n please dont enter other value!\n");
+
 
 while (ch[0]!='E')
 {
@@ -19,6 +24,9 @@ ch[0]='p',ch[1]='o';
 
 while(strlen(ch)!=1)
 {
+numAccount=0;
+cash=0;
+
 printf("Transaction type?: \n");
 scanf(" %s", ch);
 
@@ -27,6 +35,7 @@ if(strlen(ch)!=1)
 	printf(" Error! this key is not correct\n");
 
 }
+
 BufferClean();
 
 }
@@ -35,8 +44,8 @@ BufferClean();
 switch (ch[0])
 {
 
-    double ribit;
 
+//*****************************************************************
 case 'O':
     printf("\nInitial deposit:  \n");
     flag=scanf("%lf", &cash);
@@ -46,11 +55,17 @@ case 'O':
     BufferClean();
 
     if (flag==1)
-    open_account(cash); // go to account
+    {
+    if (cash>-1)
+    open_account(cash);// go to account
     else
-    	printf("Error: Enter vaild number for cash!! \n");
-    break;
+    	printf("the value must be positive \n");
+    }
 
+    else
+    	printf("Error: Enter vaild value for cash!! \n");
+    break;
+//************************************************************
 	case 'B':
 
     printf("Account number?:   \n");
@@ -67,6 +82,7 @@ case 'O':
 
     //**********************************************
     case 'D':
+
     printf("Account number?:   \n");
     scanf("%d" ,&numAccount);
 
@@ -128,6 +144,11 @@ case 'O':
     case 'C': //close
     printf("Account number?:  \n");
     scanf("%d", &numAccount);
+    if (!(numAccount<951 && numAccount>900))
+        {
+           printf("Error:you enter wrong value for AccountNumber!!\n");
+           break;
+        }
 
 
     BufferClean();
