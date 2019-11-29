@@ -8,57 +8,58 @@
 int main()
 {
 
-
-char ch []="hipopotamus ginton durlacher and meir foxi";
+char ch='p';
 double ribit;
 int numAccount;
 double cash;
 int flag=0;
+int flag2=0;
 
 
 printf("OPREATIONS DICTIONARY \n 'O' =Open  \n 'B' =Balance  \n 'D' =Deposit  \n 'W' =Withdraw  \n 'C' =Close  \n 'I' =Interest  \n 'P' =Print  \n 'E' =Exit  \n please dont enter other value!\n");
 
-
-while (ch[0]!='E')
+while(ch!='E')
 {
-ch[0]='p',ch[1]='o';
 
 
-
-
-while(strlen(ch)!=1) //loading only one char
+while(flag!=1)
 {
 numAccount=0;
 cash=0;
 
-printf("Transaction type?: \n");
-scanf(" %s", ch);
+printf("Transaction type?: \n");   //IMPORTANT NOTE: If the user writes an expression that begins with one of the real letters
+								// it will treat the expression as the first letter. example: "OGFHBD" = 'O'
+flag=scanf(" %c", &ch);
 
-if(strlen(ch)!=1)
-	printf(" Error! this key is not correct\n");
+ if(flag!=1)
+	 printf(" Error! this key is not correct\n");
 
 BufferClean();
 }
 
 
 
+flag =0;
+flag2=0;
 
-switch (ch[0])
+
+
+switch (ch)
 {
 
 
 //*****************************************************************
 case 'O':
     printf("\nInitial deposit:  \n");
-    flag=scanf("%lf", &cash);
+    flag2=scanf("%lf", &cash);
 
 
 
     BufferClean();
 
-    if (flag==1)
+    if (flag2==1)
     {
-    if (cash>-1)
+    if (cash>0)
     open_account(cash);// go to account
     else
     	printf("the value must be positive \n");
@@ -66,6 +67,8 @@ case 'O':
 
     else
     	printf("Error: Enter vaild value for cash!! \n");
+
+
     break;
 //************************************************************
 	case 'B':
@@ -104,7 +107,7 @@ case 'O':
 
 
     BufferClean();
-    if (cash>-1)
+    if (cash>0)
     Deposit(numAccount, cash);
     else
     	printf("the value must be positive \n");

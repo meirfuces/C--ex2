@@ -101,14 +101,19 @@ void closeAccount (int numAccount)
 void interest (double ribit)
 {
     int i=0;
+    int flag2=0;
     while (i<size)
     {
         if (account[i][1]==1)
         {
+        	flag2++;
             account[i][0]= (account[i][0]*((ribit)/100) + account[i][0]);
         }
         i++;
     } //end while
+    if(flag2==0)
+    	printf ("there is no open accounts to intrest!\n");
+    else
     printf ("%0.2lf%% interest was added to all the accounts\n",ribit);
 } // end function
 
