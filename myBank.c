@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "myBank.h"
 char ch;
-#define size 50
 
 double account [size][2]={0}; // 2 cells [1] for if is empty or not, and the other [0] for cash
+
 //**************************************
 void close()
 {
