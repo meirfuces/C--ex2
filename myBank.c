@@ -19,7 +19,8 @@ void close()
 void BufferClean()
 {
 	 char clear;
-	 while ((clear = getchar()) != '\n' && clear != EOF);//  Buffer cleanner- need to put it into function
+	 while ((clear = getchar()) != '\n' && clear != EOF);//  Buffer cleanner- clean the buffer. use in the program to clean the buffer
+	 	 	 	 	 	 	 	 	 	 	 	 	 	 //after every input opreation
 }
 
 //*****************************************
