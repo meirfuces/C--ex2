@@ -11,6 +11,7 @@ According to how I understood the guidelines, I implemented the program as follo
 
 I made a Implement of a BufferCleaner that clean the buffer after every Userinput. and in that way the program Meets all
 for example:  the input: O124P = 'O' .
+
 the requirements were defined in the assignment.
 In addition, because I saw that people mentioned the use of scanf "checking". I did a scanf check's on the "letter's input + the letter 'O'.
 
