@@ -13,7 +13,7 @@ I made a Implement of a BufferCleaner that clean the buffer after every Userinpu
 for example:  the input: O124P = 'O' .
 
 the requirements were defined in the assignment.
-In addition, because I saw that people mentioned the use of scanf "checking". I did a scanf check's on the "letter's input + the letter 'O'.
+In addition, because I heared that people mentioned the use of "scanf checking". In addition,i did a scanf check's on the "letter's input.
 
 I wasted a lot of time  by doing  the assigment because there were AL LOT OF updates everyday.
 its make me  change the whole code several times.
