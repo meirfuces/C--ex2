@@ -51,6 +51,8 @@ switch (ch)
 //***************************Menu Selction*******************************
 
 //***************************	'O'		*******************************
+
+// this function need to open account
 case 'O':
     printf("\nInitial deposit:  \n");
     flag2=scanf("%lf", &cash);
@@ -74,7 +76,7 @@ case 'O':
     break;
 //***********************	B	*******************************
 	case 'B':
-
+// this function for to print the balance of account
     printf("Account number?:   \n");
     flag2=scanf("%d", &numAccount);
 
@@ -95,7 +97,7 @@ case 'O':
 
     //*******************	D	**********************
     case 'D':
-
+// this funtion for Deposit from the Bank
     printf("Account number?:   \n");
     flag2=scanf("%d" ,&numAccount);
 
@@ -132,7 +134,7 @@ case 'O':
     }
     break;
 //*************************		W	******************************
-
+// this function for witdraw from the Bank
     case 'W': // meshich
 
      printf("Account number?:  \n");
@@ -170,7 +172,7 @@ case 'O':
     // functionW
     break;
 //***********************	C	*********************
-
+// this function for close Bank account
     case 'C': //close
     printf("Account number?:  \n");
     flag2=scanf(" %d", &numAccount);
@@ -188,7 +190,8 @@ case 'O':
     break;
 
 //********************	I	***********************
-    case 'I': // interest ribit
+// This function for if the Bank give a intrest   
+ case 'I': // interest ribit
     printf("Interest rate?  \n");
     flag2=scanf("%lf", &ribit);
 
@@ -201,10 +204,12 @@ case 'O':
 
     break;
 //**************	P	********************
+//This functin for print all the Account in the Bank
     case 'P'://print all
     print();
     break;
 //******************	E	******************
+// End the program
     case 'E':
          close();
     	 printf("Bye Bye!!\n");
