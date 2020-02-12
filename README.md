@@ -1,6 +1,7 @@
 # C--ex2
 ex2- my bank.
 
+Using Arrays, scan from the User extern libary.
 Author's: Ginton Durlacher % meir fuces
 
 just few attention about the implemntation:
@@ -22,3 +23,4 @@ please contact me and ask me what I meant.
 
 tnx 
 ginton & meir.
+
